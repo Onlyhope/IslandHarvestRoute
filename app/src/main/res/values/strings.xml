@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Island Harvest Route</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="endAddressText">300 Circle Road Lauterbur College 11794 Stony Brook, NY</string>
+    <string name="endAddressLabel">End Address: </string>
+    <string name="title_activity_data_entry">DataEntryActivity</string>
+    <string name="title_activity_route_detail">RouteDetailActivity</string>
+    <string name="quantityLabel">Quantity: </string>
+    <string name="companyNameText">Stop and Shop </string>
+    <string name="foodInfoText">Amount of Food: Lots of food!</string>
+    <string name="companyAddressText">Pickup Address: 158 NY-25A, Setauket- East Setauket, NY 11733</string>
+    <string name="destinationAddressText">Destination: 300 Circle Road Lauterbur College 11794 Stony Brook, NY</string>
+    <string-array name="food_types">
+        <item>Meat</item>
+        <item>Dairy</item>
+        <item>Dry</item>
+    </string-array>
+    <string-array name="amount_units">
+        <item>kg</item>
+        <item>lb</item>
+    </string-array>
+</resources>
