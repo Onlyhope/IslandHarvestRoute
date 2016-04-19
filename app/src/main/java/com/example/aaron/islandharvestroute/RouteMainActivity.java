@@ -22,7 +22,6 @@ public class RouteMainActivity extends AppCompatActivity {
     private Button mDataEntryButton;
     private Button mCompleteButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

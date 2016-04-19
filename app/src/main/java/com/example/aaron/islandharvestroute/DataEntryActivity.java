@@ -1,8 +1,6 @@
 package com.example.aaron.islandharvestroute;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -11,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DataEntryActivity extends AppCompatActivity {
 
@@ -22,6 +21,8 @@ public class DataEntryActivity extends AppCompatActivity {
     private Button mCheckInButton;
     private Button mExtraButton;
     private ArrayAdapter<CharSequence> adapter;
+
+    private IHDatabaseHelper dbh;
 
 
     @Override
@@ -49,6 +50,22 @@ public class DataEntryActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mQuantityTypeSpinner.setAdapter(adapter);
 
+        initEventHandlers();
+        dbh = new IHDatabaseHelper(this);
     }
 
+    private void initEventHandlers() {
+        // Initializing Check In Button
+        mCheckInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String type = mFoodTypeSpinner.getSelectedItem().toString();
+                double quantity = Double.parseDouble(mAmountEditText.getText().toString());
+                String units = mQuantityTypeSpinner.getSelectedItem().toString();
+
+                String dataText = dbh.insertData(type, units, quantity);
+                Toast.makeText(DataEntryActivity.this, dataText, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
