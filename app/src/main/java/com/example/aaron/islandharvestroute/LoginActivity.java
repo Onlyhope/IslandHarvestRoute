@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,8 +41,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Take User to RouteMainActivity
-                Intent takeUserToRouteMainActivity = new Intent(LoginActivity.this, RouteMainActivity.class);
-                startActivity(takeUserToRouteMainActivity);
+
+                userLogin(v);
+
             }
         });
 
@@ -56,6 +58,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void userLogin(View view) {
+        String loginName = mUsernameEditText.getText().toString();
+        String loginPass = mPasswordEditText.getText().toString();
+        String method = "login";
+        BackgroundTask bgTask = new BackgroundTask(this);
+        bgTask.execute(method, loginName, loginPass);
     }
 
 
