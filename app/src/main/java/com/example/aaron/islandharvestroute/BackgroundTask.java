@@ -3,6 +3,8 @@ package com.example.aaron.islandharvestroute;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -138,8 +140,14 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-//        alertDialog.setMessage(result);
-//        alertDialog.show();
+
+        if (result.equals("Registration Success!")) {
+            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        } else {
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+
 
     }
 }

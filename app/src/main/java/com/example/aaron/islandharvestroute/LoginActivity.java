@@ -36,17 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initializeButtons() {
-        // Login Button
-        mLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Take User to RouteMainActivity
-
-                userLogin(v);
-
-            }
-        });
-
         // Create Account Button
         mCreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override

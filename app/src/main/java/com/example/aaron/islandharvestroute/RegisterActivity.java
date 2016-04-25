@@ -30,13 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
         mUsernameEditText = (EditText) findViewById(R.id.usernameRegEditText);
         mPasswordEditText = (EditText) findViewById(R.id.passwordRegEditText);
         mCreateAccountButton = (Button) findViewById(R.id.registerAccountButton);
-
-        mCreateAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onReg(v);
-            }
-        });
     }
 
 
@@ -45,14 +38,10 @@ public class RegisterActivity extends AppCompatActivity {
         String username = mUsernameEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
 
-        Toast.makeText(this, "Data grabbed", Toast.LENGTH_SHORT).show();
-
         String method = "register";
         BackgroundTask bgTask = new BackgroundTask(this);
         bgTask.execute(method, email, username, password);
         finish();
-
-        Toast.makeText(this, "Method finished", Toast.LENGTH_SHORT).show();
     }
 
 }
